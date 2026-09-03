@@ -1,7 +1,7 @@
 public class DotProduct {
     public static void main(String[] args) {
         //Array size with test value
-        int n = 5;
+        int n = 6;
         
         //Creates a and b arrays
         int[] a = new int[n];
