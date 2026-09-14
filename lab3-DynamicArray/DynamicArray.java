@@ -35,6 +35,7 @@ public class DynamicArray {
         }
     }
 
+    //Gets item from specific index
     public int get(int index) {
         if (index >= 0 && index < size) {
             return this.data[index];
@@ -43,6 +44,7 @@ public class DynamicArray {
         }
     }
 
+    //Remove item
     public int remove(int index) {
         if (index >= 0 && index < size) {
 
@@ -63,10 +65,12 @@ public class DynamicArray {
         }
     }
 
+    //Gets size
     public int size() {
         return size;
     }
 
+    //Just a toString method
     public String toString() {
         return Arrays.toString(data);
     }
@@ -76,7 +80,7 @@ public class DynamicArray {
     public static void main(String[] args) {
         DynamicArray numbers = new DynamicArray();
 
-        //Just for testing
+        //Just for testing really
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
