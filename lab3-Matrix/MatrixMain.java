@@ -42,5 +42,8 @@ public class MatrixMain {
         } else {
             throw new IllegalArgumentException("Sowwy u can only add or multiply");
         }
+
+        
+        scanner.close();
     }
 }

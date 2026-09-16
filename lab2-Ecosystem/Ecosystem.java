@@ -123,5 +123,6 @@ public class Ecosystem {
             if (ans.equalsIgnoreCase("yes")) continue;
             else break;
         }
+        scanner.close();
     }
 }
