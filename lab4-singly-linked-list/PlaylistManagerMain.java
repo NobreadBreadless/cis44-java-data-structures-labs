@@ -25,7 +25,7 @@ public class PlaylistManagerMain {
 
             // Removing songs
             } else if (ans.equalsIgnoreCase("remove")) {
-                System.out.print("What song do you want to remove?");
+                System.out.println("What song do you want to remove?");
                 String remove = scanner.nextLine();
 
                 if (myPlaylist.getSize() == 0) {
@@ -36,7 +36,7 @@ public class PlaylistManagerMain {
                 }
 
             // Play song
-            } else if (ans.equalsIgnoreCase("play nextadd")) {
+            } else if (ans.equalsIgnoreCase("play next")) {
                 if (myPlaylist.getSize() > 0) {
                     myPlaylist.playNext();
                 } else {
