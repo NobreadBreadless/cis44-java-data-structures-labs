@@ -37,6 +37,7 @@ public class TextEditorMain {
             }
         }
 
+        // Close scanner
         scanner.close();
     }
 }
