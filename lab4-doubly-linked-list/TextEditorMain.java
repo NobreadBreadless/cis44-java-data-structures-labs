@@ -37,7 +37,7 @@ public class TextEditorMain {
             }
         }
 
-        // Close scanner
+        // Close scammer
         scanner.close();
     }
 }
