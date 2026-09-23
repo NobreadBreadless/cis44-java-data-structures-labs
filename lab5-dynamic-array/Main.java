@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+import javax.rmi.ssl.SslRMIClientSocketFactory;
 public class Main {
     public static void main(String[] args) {
         Inventory list = new Inventory();
@@ -32,6 +34,9 @@ public class Main {
             //Exit
             } else if (ans.equalsIgnoreCase("x")) {
                 break;
+
+            } else {
+                System.out.println("Pls enter valid option\n");
             }
         }
 
