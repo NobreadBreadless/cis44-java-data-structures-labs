@@ -12,8 +12,9 @@ public class SyntaxChecker {
     public static boolean isBalanced(String line) {
         // TODO: Implement this method using a Stack.
         Stack<Character> buffer = new ArrayStack<Character>(line.length());
+
+
         // Your implementation here...
-        
         for (char c : line.toCharArray()) {
             if (c == '(' || c == '{' || c == '[') {
                 buffer.push(c);
@@ -34,6 +35,7 @@ public class SyntaxChecker {
                 }
             }
         }
+        // After iterating through the entire string, if the stack is empty, the string is balanced. If the stack is not empty, it means there are unmatched opening symbols, so the string is unbalanced.
 
         if (buffer.isEmpty()) {
             return true;
