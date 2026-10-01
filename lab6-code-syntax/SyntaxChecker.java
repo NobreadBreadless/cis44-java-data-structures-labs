@@ -11,11 +11,35 @@ public class SyntaxChecker {
      */
     public static boolean isBalanced(String line) {
         // TODO: Implement this method using a Stack.
-        Stack buffer = new ArrayStack<Character>(line.length());
-
+        Stack<Character> buffer = new ArrayStack<Character>(line.length());
         // Your implementation here...
         
-        return false; // Placeholder
+        for (char c : line.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[') {
+                buffer.push(c);
+            } else if (c == ')' || c == '}' || c == ']') {
+                if (buffer.isEmpty()) {
+                    return false;
+                }
+                
+                // Pop
+                char popped = buffer.pop();
+
+                // Check if close match opening
+                if (!(
+                    (c == ')' && popped == '(') || 
+                    (c == ']' && popped == '[') || 
+                    (c == '}' && popped == '{'))) {
+                    return false;
+                }
+            }
+        }
+
+        if (buffer.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static void main(String[] args) {
