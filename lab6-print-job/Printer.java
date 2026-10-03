@@ -28,11 +28,11 @@ class PrintJob {
  * Simulates a printer that manages a queue of print jobs.
  */
 public class Printer {
-    private Queue jobQueue;
+    private Queue<PrintJob> jobQueue;
 
     public Printer() {
         // TODO: Initialize the jobQueue with a LinkedQueue
-        jobQueue = null; // Placeholder
+        jobQueue = new LinkedQueue<>(); // Placeholder
     }
 
     /**
@@ -42,15 +42,20 @@ public class Printer {
     public void addJob(PrintJob job) {
         System.out.println("Adding to queue: " + job);
         // TODO: Enqueue the job
+        jobQueue.enqueue(job);
     }
 
     /**
      * Processes the job at the front of the queue.
      */
     public void processNextJob() {
-        // TODO: Check if the queue is empty. If so, print a message.
-        // If not empty, dequeue the job and print a "Processing..." message.
+    if (jobQueue.isEmpty()) {
+        System.out.println("Queue is currently empty");
+    } else {
+        PrintJob job = jobQueue.dequeue();
+        System.out.println("Processing: " + job);
     }
+}
 
     public static void main(String[] args) {
         Printer officePrinter = new Printer();

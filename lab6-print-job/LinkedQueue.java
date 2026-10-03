@@ -50,7 +50,11 @@ public class LinkedQueue<E> implements Queue<E>{
 
     // peek() method
     public E peek() {
-        return front.element;
+        if (front == null) {
+            return null;
+        } else {
+            return front.element;
+        }
     }
 
     // size() method
@@ -60,6 +64,6 @@ public class LinkedQueue<E> implements Queue<E>{
 
     // isEmpty() method
     public boolean isEmpty() {
-        
+        return size == 0;
     }
 }
