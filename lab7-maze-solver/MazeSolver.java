@@ -64,7 +64,7 @@ public class MazeSolver {
         // Mark the current cell as part of the path.
         // Try moving North, East, South, West.
         // If any direction returns true, then you've found a path, return true.
-        maze[row][col] = '.';
+        maze[row][col] = '.'; // This marks the cell
         if (solve(row - 1, col)) return true; // North
         if (solve(row + 1, col)) return true; // South
         if (solve(row, col - 1)) return true; // West
