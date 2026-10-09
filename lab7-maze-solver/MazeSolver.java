@@ -98,5 +98,28 @@ public class MazeSolver {
             System.out.println("No Solution Found:");
         }
         solver.printMaze();
+
+
+        // Unsolvable maze
+        char[][] mazeCantSolve = {
+            {'#', '#', '#', '#', '#', '#', '#'},
+            {'#', 'S', ' ', '#', ' ', ' ', '#'},
+            {'#', ' ', ' ', '#', ' ', '#', '#'},
+            {'#', ' ', '#', '#', ' ', ' ', '#'},
+            {'#', ' ', ' ', '#', '#', 'F', '#'},
+            {'#', '#', '#', '#', '#', '#', '#'}
+        };
+
+        MazeSolver unSolver = new MazeSolver(mazeCantSolve);
+
+        System.out.println("Original Maze:");
+        unSolver.printMaze();
+
+        if (unSolver.solve()) {
+            System.out.println("Solution Found:");
+        } else {
+            System.out.println("No Solution Found:");
+        }
+        unSolver.printMaze();
     }
 }
