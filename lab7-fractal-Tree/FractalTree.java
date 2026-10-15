@@ -47,7 +47,7 @@ public class FractalTree extends JPanel {
         // - Branch right by adding to the angle (e.g., angle + 30).
         // - Decrease the depth for both calls (depth - 1).
         drawTree(g, x2, y2, angle - 30, depth - 1);
-        drawTree(g, x2, y2, angle + 7, depth - 1);
+        drawTree(g, x2, y2, angle + 30, depth - 1);
 
     }
 
