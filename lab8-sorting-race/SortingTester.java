@@ -14,7 +14,7 @@ public class SortingTester {
             // TODO: Call your test methods for Average, Best, and Worst cases.
             runAndTimAllSorts("Avg ", generateRandomArray(n));
             runAndTimAllSorts("Best ", generateSortedArray(n));
-            runAndTimAllSorts("Avg ", generateReverseSortedArray(n));
+            runAndTimAllSorts("Worst ", generateReverseSortedArray(n));
         }
     }
     
