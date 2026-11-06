@@ -16,7 +16,7 @@ public class SearchComparison {
             comparisonCount++;
             if (arr[i] == key) return i;
         }
-        System.out.println(comparisonCount);
+        System.out.println("Comparison Count: " + comparisonCount);
         return -1; // Return -1 if the loop finishes without finding the key.
     }
 
@@ -47,6 +47,7 @@ public class SearchComparison {
             mid = (low + high) / 2;
 
             if (arr[mid] == key) {
+                System.out.println("Comparison Count: " + comparisonCount);
                 return mid;
             } else if (key < arr[mid]) {
                 high = mid - 1;
@@ -55,7 +56,7 @@ public class SearchComparison {
             }
         }
 
-        System.out.println(comparisonCount);
+        System.out.println("Comparison Count: " + comparisonCount);
         return -1; // Return -1 if the loop finishes (low > high) without finding the key.
     }
 
