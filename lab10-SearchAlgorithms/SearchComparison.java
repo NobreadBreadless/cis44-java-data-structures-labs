@@ -11,11 +11,12 @@ public class SearchComparison {
         // TODO: Implement the iterative linear search algorithm.
         // Loop through the array from index 0 to the end.
         // If the element at the current index matches the key, return the index.
-        
+        int comparisonCount = 0;
         for (int i = 0; i < arr.length; i++) {
+            comparisonCount++;
             if (arr[i] == key) return i;
         }
-
+        System.out.println(comparisonCount);
         return -1; // Return -1 if the loop finishes without finding the key.
     }
 
@@ -38,8 +39,11 @@ public class SearchComparison {
         // 4. If the key is greater than arr[mid], update 'low'.
         
         int mid = 0;
-    
+        
+        int comparisonCount = 0;
+
         while (low <= high) {
+            comparisonCount++;
             mid = (low + high) / 2;
 
             if (arr[mid] == key) {
@@ -51,6 +55,7 @@ public class SearchComparison {
             }
         }
 
+        System.out.println(comparisonCount);
         return -1; // Return -1 if the loop finishes (low > high) without finding the key.
     }
 
