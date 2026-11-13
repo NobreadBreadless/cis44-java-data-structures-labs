@@ -3,7 +3,7 @@ public class TwoFourTreeDriver {
         TwoFourTree tree = new TwoFourTree();
 
         // Test sequence for splits
-        int[] keys = {10, 20, 30, 40, 50, 60, 70, 80, 90, 5, 15, 25, 35};
+        int[] keys = {10, 20, 30, 40, 50, 60, 70, 80, 90, 5, 15, 25, 35, 100}; // Added 100 to force root to split (multi-level split)
 
         System.out.println("Inserting keys into 2-4 Tree...");
         for (int key : keys) {
@@ -16,6 +16,7 @@ public class TwoFourTreeDriver {
 
         // TODO: Students can also implement preorder/postorder traversal for practice
 
-        System.out.println("\nExpected Inorder: 5 10 15 20 25 30 35 40 50 60 70 80 90");
+
+        System.out.println("\nExpected Inorder: 5 10 15 20 25 30 35 40 50 60 70 80 90 100");
     }
 }
