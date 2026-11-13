@@ -7,7 +7,7 @@ class AVLNode {
     AVLNode(int key) {
         // TODO: Initialize key, height, left, and right
         this.key = key;
-        this.height = 0;
+        this.height = 1;
         this.left = null;
         this.right = null;
     }
@@ -44,22 +44,48 @@ public class AVLTree {
 
     // TODO: Right rotation
     AVLNode rightRotate(AVLNode y) {
-        return null; // placeholder
+        AVLNode x = y.left;
+        AVLNode T2 = x.right;
+
+        // Rotation stuff
+        x.right = y;
+        y.left = T2;
+
+        // Update height
+        y.height = max(height(y.left), height(y.right)) + 1;
+        x.height = max(height(x.left), height(x.right)) + 1;
+
+        // New root
+        return x;
     }
 
     // TODO: Left rotation
     AVLNode leftRotate(AVLNode x) {
-        return null; // placeholder
+        AVLNode y= x.right;
+        AVLNode T2 = y.left;
+
+        // Rotation stuff again
+        y.left = x;
+        x.right = T2;
+
+        // Update height again
+        x.height = max(height(x.left), height(x.right)) + 1;
+        y.height = max(height(y.left), height(y.right)) + 1;
+
+        // New root :)
+        return y;
     }
 
     // TODO: Left-Right rotation
     AVLNode leftRightRotate(AVLNode z) {
-        return null; // placeholder
+        z.left = leftRotate(z.left);
+        return rightRotate(z);
     }
 
     // TODO: Right-Left rotation
     AVLNode rightLeftRotate(AVLNode y) {
-        return null; // placeholder
+        y.right = rightRotate(y.right);
+        return leftRotate(y);
     }
 
     // Public insert method
@@ -69,7 +95,29 @@ public class AVLTree {
 
     // TODO: Recursive insertion with rebalancing
     private AVLNode insert(AVLNode node, int key) {
-        return null; // placeholder
+        if (node == null) return new AVLNode(key);
+
+        if (key < node.key) {
+            node.left = insert(node.left, key);
+        } else if (key > node.key) {
+            node.right = insert(node.right, key);
+        } else {
+            return node;
+        }
+
+        // Update node height
+        node.height = max(height(node.left), height(node.right)) + 1;
+
+        // Balance check
+        int balance = getBalance(node);
+
+        // 4 Cases
+        if (balance > 1 && key < node.left.key) return rightRotate(node);
+        if (balance < -1 && key > node.right.key) return leftRotate(node);
+        if (balance > 1 && key > node.left.key) return leftRightRotate(node);
+        if (balance < -1 && key < node.right.key) return rightLeftRotate(node);
+
+        return node;
     }
 
     // TODO: Traversal methods
@@ -79,7 +127,10 @@ public class AVLTree {
     }
 
     private void inorder(AVLNode node) {
-        // placeholder
+        if (node == null) return;
+        inorder(node.left);
+        System.out.print(node.key + " ");
+        inorder(node.right);
     }
 
     public void preorder() {
@@ -88,7 +139,10 @@ public class AVLTree {
     }
 
     private void preorder(AVLNode node) {
-        // placeholder
+        if (node == null) return;
+        System.out.print(node.key + " ");
+        preorder(node.left);
+        preorder(node.right);
     }
 
     public void postorder() {
@@ -97,6 +151,9 @@ public class AVLTree {
     }
 
     private void postorder(AVLNode node) {
-        // placeholder
+        if (node == null) return;
+        postorder(node.left);
+        postorder(node.right);
+        System.out.print(node.key + " ");
     }
 }

@@ -8,6 +8,10 @@ public class AVLTreeDriver {
         tree.insert(30);
 
         // TODO: Add more insertions to test all 4 rotation cases
+        tree.insert(5);
+        tree.insert(4);
+        tree.insert(8);
+        tree.insert(26);
 
         // TODO: Print traversals
         System.out.print("Inorder: ");
@@ -20,5 +24,10 @@ public class AVLTreeDriver {
         tree.postorder();
 
         // TODO: Add expected results as comments for verification
+        
+        // Expected results:
+        // Inorder: 4 5 8 10 20 25 30
+        // Preorder: 10 5 4 8 25 20 30
+        // Postorder: 4 8 5 20 30 25 10
     }
 }
