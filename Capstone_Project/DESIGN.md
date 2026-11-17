@@ -29,10 +29,10 @@ Phase 1
 +-------------------------------------+
 
 Relationships:
-  EmergencyRoom 1 ---------> * Patient
+  EmergencyRoom 1 ---> * Patient
     (manages patients in the triage queue and registry)
 
-  EmergencyRoom 1 ---------> * Patient
+  EmergencyRoom 1 ---> * Patient
     (registry provides O(1) lookup by patientId)
 ```
 
