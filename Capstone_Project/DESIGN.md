@@ -1,6 +1,5 @@
-# DESIGN.md — Hospital Emergency Room Triage System
+# DESIGN.md — Hospital Emergency Room Triage System (Option B)
 
-Option B — Hospital Emergency Room Triage (Priority Queues)
 Phase 1
 
 ---
